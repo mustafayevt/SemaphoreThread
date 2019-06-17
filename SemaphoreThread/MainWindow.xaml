@@ -6,7 +6,30 @@
         xmlns:local="clr-namespace:SemaphoreThread"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <UniformGrid Columns="3">
+        <StackPanel>
+            <GroupBox Header="Working Threads" Height="300">
+                <ListBox ItemsSource="{Binding WorkingThreads}"/>
+            </GroupBox>
+
+            <TextBlock Text="Places in Semaphore"/>
+
+            <TextBox Background="AliceBlue"/>
+        </StackPanel>
+
+        <StackPanel>
+            <GroupBox Header="Waiting Threads" Height="300">
+                <ListBox ItemsSource="{Binding WaitingThreads}"/>
+            </GroupBox>
+        </StackPanel>
+
+
+        <StackPanel>
+            <GroupBox Header="Created Threads" Height="300">
+                <ListBox ItemsSource="{Binding CreatedThreads}"/>
+            </GroupBox>
+
+            <Button Content="Create New" Command="{Binding CreateThreadCommand}"/>
+        </StackPanel>
+    </UniformGrid>
 </Window>
